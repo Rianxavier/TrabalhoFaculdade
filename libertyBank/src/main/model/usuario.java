@@ -120,13 +120,5 @@ public class usuario {
 
     public void setAceite(TinyIntAsSmallIntJdbcType aceite) {
         this.aceite = aceite;
-    }
-
-    
-
-
-    
-
-
-    
+    }    
 }
