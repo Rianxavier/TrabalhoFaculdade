@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/css/cadastroStyle.css">
+    <title>Cadastro XXXX </title>
+</head>
+<body>
+    <div class="container">
+     <div class = "form-image">
+        <img src="./Assets/img/undraw_forms_re_pkrt.svg" alt="">
+     </div>
+     <div class = "form">
+        <form action = "###">
+            <div class="logoCaixa">
+                <img class="logo" src="./Assets/img/banco_logo.png" alt="">
+            </div>
+            
+            <h2>Cadastre-se</h2>
+
+            <div class ="input-group">
+                <div class = "input-box">
+                    
+                    <label for="completname"> Nome Completo:</label>
+            
+                    <input id = "completname" type="text" placeholder="Nome Completo:" name="completname"  required>    
+                </div>
+
+
+                <div class = "input-box">
+                    <label for="nasc"> Data de nascimento </label>
+                    <input id="nasc" type="date" name="nasc" required>    
+                </div>
+
+                <div class="grid">
+                    <div class = "input-box">
+                        <label for="cpf">CPF:</label>
+                        <input id = "cpf" type="text" name="cpf" placeholder="CPF:" required>    
+                    </div>
+    
+                    <div class = "input-box">
+                        <label for="number">Celular:</label>
+                        <input id="number" type="tel" name="number"   placeholder="Celular:"required>    
+                    </div>
+                </div>
+                
+
+                <div class = "input-box">
+                    <label for="email">e-mail:</label>
+                    <input id = "email" type="email" name="email" placeholder="E-mail" required>    
+                </div>
+
+                <div class="grid">
+                    <div class = "input-box">
+                        <label for="senha">Senha:</label>
+                        <input id = "senha" type="password" name="senha" placeholder="Senha" required> 
+                        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>   
+                    </div>
+                    <div class = "input-box" >
+                        <label for="confirmarsenha" id="labelConfSenha">Confirmar Senha:</label>
+                        <input id = "confirmarsenha" type="password" name="confirmarsenha" placeholder="Confirmar Senha" required> 
+                        <i id="verConfSenha" class="fa fa-eye" aria-hidden="true"></i>   
+                    </div>
+                </div>
+                 <div class="accept">
+                    <input type="checkbox" id="accept" name="accept">
+                    <label for = "accept"> Aceito os termos de Privacidade para uso do XXXX </label> 
+                </div> 
+                
+                 <br>
+                <div class = "login-button">
+                    <button type="button"> Confirmar Cadastro</button>
+                </div>
+                <div class="caixaLogin">
+                    <p class="">Já possui uma conta?</p>
+                    <a class="link-login" href="./index.html">Entre</a>
+                </div>
+                
+            
+        </form>
+     </div>
+    </div>
+    <script src="./Assets/JS/cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap');
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Wix Madefor Text', 'Sans-serif';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006494;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    height: 85%;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    border-radius: 20px;
+}
+
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a174c5d7;
+    padding: 1rem;
+    border-radius: 30px 0 0 30px;
+}
+.form-image img{
+    width: 30rem;
+}
+
+
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(200, 200, 243);
+    padding: 3rem;
+    border-radius: 0 30px 30px 0;
+}
+
+.logoCaixa{
+    text-align: center;
+}
+
+.logo {
+    width: 6em;
+    margin: 10px;
+    position:relative;
+    top: 0px;
+    cursor: pointer;
+}
+
+.form h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+    
+}
+
+.login-button {
+    text-align: center;
+}
+
+.login-button button {
+    
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(89, 89, 173) ;
+    font-size: 14px;
+    letter-spacing: .6px;
+    transition: .1s;
+}
+
+.login-button button:hover {
+    transform: scale(0.95,0.95);
+    background-color: #191970 ;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #efeef5;
+}
+
+.input-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.input-box:last-child{
+    margin-right: 0;  
+}
+
+.input-box input{ 
+    padding: 10px 0;
+    position:relative;
+    width: 100%;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #006494;
+    margin-bottom: 7px;
+    font-size: 16px;
+    
+}
+
+.input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .7s;
+    display: none;
+}
+
+.grid{
+    display: flex;
+    justify-content: spacing-between;
+    width: 94.5%;
+    
+}
+
+.fa-eye{
+    position: absolute;
+    top: 14px;
+    right: 2px;
+    color: black;
+    cursor: pointer;
+}
+
+.accept{
+    font-size:14px;
+    color: #006494;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+form p{
+    color: grey;
+    font-weight: 300;
+    margin-top: 0.5em;
+    font-size: 0.95em;
+    
+}
+
+form .link-login{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.98em;
+    font-style: normal;
+    text-align: center;  
+    color: #2D0068 ;
+    
+}
+
+.caixaLogin{
+    text-align: center;
+}
+
+@media (max-width:1090px){
+    .form-image {
+        display:none;
+    }
+    .container{
+        width: 70%;
+        height: 65%;
+    }
+    .form img{
+        width: 20%;
+    }
+    .form{
+        width: 100%;
+        border-radius:30px;
+    }
+}
+
+
+@media (max-width: 812px){
+    .container{
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 60%;
+    }
+    .form {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .form .logo{
+         width: 3.7em;
+    }
+
+    .grid{
+        display: inline;
+    }
+    .input-box{
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
+@media (max-width:340px){
+    .form{
+        
+        
+    }
+    .form .logo{
+        
+   }
+   .form h2{
+    font-size: 15px;
+   }
+
+}
