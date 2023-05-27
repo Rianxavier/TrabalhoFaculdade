@@ -1,25 +1,20 @@
 package com.banco.libertyBank.model;
-
 import java.sql.Date;
-
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.Columns;
-import org.hibernate.mapping.Column;
 import org.hibernate.type.descriptor.jdbc.TinyIntAsSmallIntJdbcType;
 
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import javax.persistence.Column;
 
 @Entity
 @Access(AccessType.FIELD)
-@Table(name = "novoCliente")
-public class usuario {
+@Table(name = "clieteNovo")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
