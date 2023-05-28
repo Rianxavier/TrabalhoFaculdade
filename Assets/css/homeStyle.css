@@ -300,7 +300,8 @@ footer{
 }
 
 #footer-informacoes{
-font-size: 0.9em;
+    font-size: 0.7em;
+    text-align: right;
 }
 
 @media (max-width: 650px) {
@@ -318,9 +319,6 @@ font-size: 0.9em;
    
     #rodape-redesSociais{
         font-size: 1em;
-    }
-    .acompanhe{
-        display: none;
     }
 
     #rodape-informacoes{
