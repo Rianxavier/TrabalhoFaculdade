@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap');
+
+*{
+    font-family: 'Wix Madefor Text', 'Sans-serif';
+}
+
+body{
+    margin: 0px;
+}
+
+/* Topo do site (header) */
+
+header{
+    background-color: #006494;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    align-items: center;
+}
+
+#header-logo{
+    padding: 5px 10px;
+}
+
+nav{
+    display: inline;
+}
+
+#topo div div{
+    display: inline;
+}
+
+.Menu-links{
+    width: 30%;
+}
+
+.Menu-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Menu-links ul li{
+    display: inline;
+    font-size: 1em;
+}
+
+.Menu-links .link{
+    position: relative;
+    right: 30px;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.Menu-links .link:hover{
+    color: #006494;
+    background-color: white;
+}
+
+.atalhos{
+    display: inline;
+    position: relative;
+    left: 20px;
+    bottom: 27px;
+}
+
+.atalhos ul {
+    list-style: none;
+    padding: 0;
+    display: inline;
+}
+
+.atalhos ul li{
+    display: inline;
+    font-size: 1em;
+}
+
+.atalhos .paginacao{
+    display: inline;
+    position: relative;
+    right: 30px;
+    border-bottom: 1px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+
+.atalhos .paginacao:hover{
+    background-color: white;
+    color: #006494;
+}
+
+/* Slider */
+
+#tituloSlider{
+    margin-top: 100px;
+    color: #006494;
+    border-bottom: 5px solid #006494;
+    border-top: 5px solid #006494;
+    text-align: center;
+}
+ 
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #006494;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: #006494;
+}
+
+#radio1:checked ~ .first{
+    right: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+.navegation-auto div{
+    border: 2px solid #006494;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navegation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navegation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navegation-auto .auto-btn1{
+    background-color: #006494;
+}
+
+#radio2:checked ~ .navegation-auto .auto-btn2{
+    background-color: #006494;
+}
+
+#radio3:checked ~ .navegation-auto .auto-btn3{
+    background-color: #006494;
+}
+
+/* Banner informativo */
+
+.banner{
+    background-color: #006494;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bannerInverso{
+    flex-direction: row-reverse;
+}
+
+.banner-text{
+    width: 49%;
+    background-color: #006494;
+    color: white;
+    padding: 30px;
+}
+
+.banner-image{
+    width: 50%;
+    padding: 10px 0;
+}
+
+#paginacao-servicosPersonalizados{
+    position: relative;
+    bottom: 80px;
+}
+
+/* Vantagens */
+
+#vantagens-titulo{
+    color: #006494;
+    text-align: center;
+}
+
+#vantagens{
+    margin-bottom: 20px;
+}
+
+#card-vantagen{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.vantagem{
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 3px;
+    text-align: center;
+    box-shadow: 2px 4px 10px black;
+    margin-bottom: 25px;
+}
+
+.vantagem i{
+    font-size: 3em;
+}
+
+#paginacao-vantagens{
+    position: relative;
+    bottom: 80px;
+}
+
+/* Roda pé */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #006494;
+    color: white;
+    align-items: center;
+}
+
+#footer-redesSociais{
+    margin-top: 15px;
+    padding-left: 5px;
+    font-size: 1.7em;
+}
+
+#footer-redesSociais a{
+    color: white;
+    padding: 5px 3px 3px 3px;
+}
+
+#footer-redesSociais a:hover{
+    background-color: white;
+    color: #006494;
+    border-radius: 100%;
+}
+
+#footer-informacoes{
+    font-size: 0.7em;
+    text-align: right;
+}
+
+@media (max-width: 650px) {
+    .banner-image {
+      display: none;
+    }
+
+    .banner-text{
+        width: 100%;
+    }
+
+    #Menu-links{
+        font-size: 0.8em;
+    }
+   
+    #rodape-redesSociais{
+        font-size: 1em;
+    }
+
+    #rodape-informacoes{
+        font-size: 0.5em;
+    }
+
+    #tituloSlider{
+        font-size: 1.5em;
+    }
+
+    .slides{
+        display: none;
+    }
+
+    .slider{
+        height: auto;
+        width: auto;
+    }
+
+    .manual-navigation{
+        display: none;
+    }
+
+    .atalhos{
+        display: none;
+    }
+
+    .vantagem{
+        width: 45%;
+    }
+}
