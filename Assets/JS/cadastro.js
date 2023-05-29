@@ -1,13 +1,22 @@
+//  import {ValidaCPF} from './classValidaCPF';
+
 let btnVerSenha = document.querySelector('#verSenha');
 let btnVerConfSenha = document.querySelector('#verConfSenha');
 
+const formulario = document.querySelector('.formulario');
+
+let inputNome = document.querySelector('#nome');
+let inputDataNacimento = document.querySelector('#nasc');
 let inputCpf = document.querySelector('#cpf');
 let inputCelular = document.querySelector('#number');
+let inputEmail = document.querySelector('#email');
+let inputSenha = document.querySelector('#senha');
 
 let inputConfirmarSenha = document.querySelector('#confirmarsenha');
 let labelConfirmarSenha = document.querySelector('#labelConfSenha');
-let inputSenha = document.querySelector('#senha');
 
+let cpfVerifica = false;
+let senhaVerifica = false;
 
 btnVerSenha.addEventListener("click", verSenha);
 btnVerConfSenha.addEventListener("click", verConfirmarSenha);
@@ -28,62 +37,67 @@ function verConfirmarSenha() {
     }
 }
 
-function ValidaCPF(cpfEnviado){
-    Object.defineProperty(this, 'cpfLimpo', {
+// class para validação do CPF
+class ValidaCPF {
+    constructor(cpfEnviado) {
+      Object.defineProperty(this, 'cpfLimpo', {
+        writable: false,
         enumerable: true,
-        get: function() {
-            return cpfEnviado.replace(/\D+/g, '');
-        }
-        
-    });
-}
-
-ValidaCPF.prototype.valida = function() {
-    if(typeof this.cpfLimpo === 'undefined') return false;
-    if(this.cpfLimpo.length !== 11) return false;
-    if(this.isSequencia()) return false;
-
-    const cpfParcial = this.cpfLimpo.slice(0, -2);
-    const digito1 = this.criaDigito(cpfParcial)
-    const digito2 = this.criaDigito(cpfParcial + digito1);
+        configurable: false,
+        value: cpfEnviado.replace(/\D+/g, '')
+      });
+    }
+  
+    eSequencia() {
+      return this.cpfLimpo.charAt(0).repeat(11) === this.cpfLimpo;
+    }
+  
+    geraNovoCpf() {
+      const cpfSemDigitos = this.cpfLimpo.slice(0, -2);
+      const digito1 = ValidaCPF.geraDigito(cpfSemDigitos);
+      const digito2 = ValidaCPF.geraDigito(cpfSemDigitos + digito1);
+      this.novoCPF = cpfSemDigitos + digito1 + digito2;
+    }
+  
+    static geraDigito(cpfSemDigitos) {
+      let total = 0;
+      let reverso = cpfSemDigitos.length + 1;
+  
+      for(let stringNumerica of cpfSemDigitos) {
+        total += reverso * Number(stringNumerica);
+        reverso--;
+      }
+  
+      const digito = 11 - (total % 11);
+      return digito <= 9 ? String(digito) : '0';
+    }
+  
+    valida() {
+      if(!this.cpfLimpo) return false;
+      if(typeof this.cpfLimpo !== 'string') return false;
+      if(this.cpfLimpo.length !== 11) return false;
+      if(this.eSequencia()) return false;
+      this.geraNovoCpf();
     
-    const novoCpf = cpfParcial + digito1 + digito2;
-    return this.cpfLimpo === novoCpf;
+  
+      return this.novoCPF === this.cpfLimpo;
+    }
+  }
 
-    
-};
-
-ValidaCPF.prototype.criaDigito = function(cpfParcial) {
-    const cpfArray = Array.from(cpfParcial);
-    
-    let regressivo = cpfArray.length + 1;
-    const total = cpfArray.reduce((ac, val) => {
-        ac += (regressivo * Number(val));
-        regressivo--;
-        return ac;
-    }, 0);
-
-    const digito = 11 - (total % 11);
-    return digito > 9 ? '0' : String(digito);
-}
-
-ValidaCPF.prototype.isSequencia =  function() {
-    const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
-    return sequencia === this.cpfLimpo;
-}
-
-
-inputCpf.addEventListener('keyup', () => {
+  inputCpf.addEventListener('keyup', () => {
     let valorCpf = inputCpf.value;
     
     const cpf = new ValidaCPF(valorCpf)
     if(cpf.valida()) {
         inputCpf.setAttribute('style', 'border-color: #006494')
+        cpfVerifica = true;
     }else{
         inputCpf.setAttribute('style', 'border-color: red')
+        cpfVerifica = false;
     }
-    if(valorCpf.length == 0){
+    if(inputCpf.length == 0){
         inputCpf.setAttribute('style', 'border-color: #006494')
+        cpfVerifica = false;
     }
     
     if (valorCpf.length > 3) {
@@ -93,14 +107,14 @@ inputCpf.addEventListener('keyup', () => {
       }
 
     inputCpf.value = valorCpf
-})
+}) 
 
 inputCelular.addEventListener('keyup', () => {
     let valorCelular = inputCelular.value;
 
     if (valorCelular.length >= 2 ){
-        valorCelular = valorCelular.replace(/^(\d{2})(\d)/g, '($1)$2');
-        valorCelular = valorCelular.replace(/^(\d{2})\.(\d{5})(\d)/g, '($1)$2.$3');        
+        valorCelular = valorCelular.replace(/^(\d{2})(\d)/g, '($1) $2');
+        valorCelular = valorCelular.replace(/^(\d{2})\.(\d{5})(\d)/g, '($1) $2-$3');        
     }
     
     inputCelular.value = valorCelular; 
@@ -110,18 +124,62 @@ inputConfirmarSenha.addEventListener('keyup', () => {
     if (inputSenha.value !== inputConfirmarSenha.value){
         inputConfirmarSenha.setAttribute('style', 'color: red');
         inputConfirmarSenha.setAttribute('style', 'border-color: red');
+        senhaVerifica = false;
     }else{
         inputConfirmarSenha.setAttribute('style', 'color: black');
         inputConfirmarSenha.setAttribute('style', 'border-color: #006494');
+        senhaVerifica = true;
     }
     if(inputConfirmarSenha.value.length == 0){
         inputConfirmarSenha.setAttribute('style', 'color: black');
         inputConfirmarSenha.setAttribute('style', 'border-color: #006494');
+        senhaVerifica = false;
     }
 })
 
-// let dataNasci = document.querySelector('#nasc');
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    if (!senhaVerifica || !cpfVerifica || inputNome.length === 0 || inputDataNacimento.length === 0 || inputEmail.length === 0 || inputSenha.length === 0 || inputCelular.length === 0) {
+        alert("Campos preenchidos imcorretamente");
+    }
+    else{
+        cadastrar();
+        limpar();
+    }
+    
 
-// dataNasci.setAttribute('placeholder', 'Data de Nascimento');
+    
+});
 
-  
+function cadastrar(){
+    fetch("http://localhost:8080/cadastrar",
+    {
+        hearders: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+            nome: inputNome.value,
+            dataNasci: inputDataNasci.value,
+            CPF: inputCPF.value,
+            celular: inputCelular.value,
+            email: inputEmail.value,
+            senha: inputSenha.value
+        })
+    })
+    .then(function (res) { console.log(res)})
+    .catch(function (res) { console.log(res)})
+};
+
+function limpar(){
+    inputNome.value = "";
+    inputDataNacimento.value = "";
+    inputCpf.value = "";
+    inputCelular.value = "";
+    inputEmail.value = "";
+    inputSenha.value = "";
+    inputConfirmarSenha.value = "";
+}
+ 
