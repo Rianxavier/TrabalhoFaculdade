@@ -9,13 +9,13 @@ import com.banco.libertyBank.DAO.IUsuario;
 import com.banco.libertyBank.model.Usuario;
 
 @RestController
-public class UsuarioController{
+public class UsuarioController {
 
     @Autowired
     private IUsuario dao;
 
     @GetMapping("/usuarios")
-    public List<Usuario> listaUsuarios(){
+    public List<Usuario> listUsuarios() {
         return (List<Usuario>) dao.findAll();
-    } 
+    }
 }
