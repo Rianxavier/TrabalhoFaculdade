@@ -54,7 +54,7 @@ body{
 }
 
 .logo {
-    width: 6em;
+    width: 4.6em;
     margin: 10px;
     position:relative;
     top: 0px;
@@ -148,7 +148,7 @@ body{
     cursor: pointer;
 }
 
-.accept{
+#checkboxLabel{
     font-size:14px;
     color: #006494;
     margin-top: 10px;
@@ -192,6 +192,7 @@ form .link-login{
         width: 100%;
         border-radius:30px;
     }
+    
 }
 
 
@@ -219,18 +220,34 @@ form .link-login{
         margin: auto;
     }
     
+    
 }
 
 @media (max-width:340px){
-    .form{
-        
-        
-    }
-    .form .logo{
-        
-   }
    .form h2{
     font-size: 15px;
    }
 
+}
+
+.errorCampos{
+    position: relative;
+    color: red;
+    text-align: center;
+    margin-bottom: 2px;
+    border: 1px solid red;
+    padding: 10px;
+    letter-spacing: 1.0px;
+    border-radius: 5px;
+    display: none;
+}
+.errorPrivacidade{
+    color: red;
+    text-align: center;
+    margin-bottom: 2px;
+    border: 1px solid red;
+    padding: 10px;
+    letter-spacing: 1.0px;
+    border-radius: 5px;
+    display: none;
 }

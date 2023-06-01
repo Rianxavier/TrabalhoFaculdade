@@ -15,6 +15,12 @@ let inputSenha = document.querySelector('#senha');
 let inputConfirmarSenha = document.querySelector('#confirmarsenha');
 let labelConfirmarSenha = document.querySelector('#labelConfSenha');
 
+let checkbox = document.querySelector('#accept');
+let checkboxLabel = document.querySelector('#checkboxLabel');
+
+let msgErrorCampo = document.querySelector('.errorCampos');
+let msgErrorCheck = document.querySelector('.errorPrivacidade');
+
 let cpfVerifica = false;
 let senhaVerifica = false;
 
@@ -84,10 +90,19 @@ class ValidaCPF {
     }
   }
 
+  inputCpf.addEventListener('keypress', function(e) {
+    const key = e.key;
+
+    if (isNaN(key)) {
+        e.preventDefault();
+    }
+  } );
+
   inputCpf.addEventListener('keyup', () => {
     let valorCpf = inputCpf.value;
     
-    const cpf = new ValidaCPF(valorCpf)
+    const cpf = new ValidaCPF(valorCpf);
+
     if(cpf.valida()) {
         inputCpf.setAttribute('style', 'border-color: #006494')
         cpfVerifica = true;
@@ -109,16 +124,42 @@ class ValidaCPF {
     inputCpf.value = valorCpf
 }) 
 
+inputCelular.addEventListener('keypress', function(e) {
+    const key = e.key;
+
+    if (isNaN(key)) {
+        e.preventDefault();
+    }
+  });
+
 inputCelular.addEventListener('keyup', () => {
     let valorCelular = inputCelular.value;
 
-    if (valorCelular.length >= 2 ){
-        valorCelular = valorCelular.replace(/^(\d{2})(\d)/g, '($1) $2');
-        valorCelular = valorCelular.replace(/^(\d{2})\.(\d{5})(\d)/g, '($1) $2-$3');        
-    }
+    if (!valorCelular) return ""
+    valorCelular = valorCelular.replace(/\D/g,'')
+    valorCelular = valorCelular.replace(/(\d{2})(\d)/,"($1) $2")
+    valorCelular = valorCelular.replace(/(\d)(\d{4})$/,"$1-$2")
+  
     
     inputCelular.value = valorCelular; 
 })
+
+inputSenha.addEventListener("keyup", () =>{
+    if (inputSenha.value !== inputConfirmarSenha.value){
+        inputConfirmarSenha.setAttribute('style', 'color: red');
+        inputConfirmarSenha.setAttribute('style', 'border-color: red');
+        senhaVerifica = false;
+    }else{
+        inputConfirmarSenha.setAttribute('style', 'color: black');
+        inputConfirmarSenha.setAttribute('style', 'border-color: #006494');
+        senhaVerifica = true;
+    }
+    if(inputConfirmarSenha.value.length == 0){
+        inputConfirmarSenha.setAttribute('style', 'color: black');
+        inputConfirmarSenha.setAttribute('style', 'border-color: #006494');
+        senhaVerifica = false;
+    }
+});
 
 inputConfirmarSenha.addEventListener('keyup', () => {
     if (inputSenha.value !== inputConfirmarSenha.value){
@@ -139,11 +180,22 @@ inputConfirmarSenha.addEventListener('keyup', () => {
 
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
+
+
     
     if (!senhaVerifica || !cpfVerifica || inputNome.length === 0 || inputDataNacimento.length === 0 || inputEmail.length === 0 || inputSenha.length === 0 || inputCelular.length === 0) {
-        alert("Campos preenchidos imcorretamente");
+        msgErrorCampo.setAttribute('style', 'display:block');
+        msgErrorCheck.setAttribute('style', 'display:none');
+    }
+    else if (!checkbox.checked) {
+        msgErrorCheck.setAttribute('style', 'display:block');
+        msgErrorCampo.setAttribute('style', 'display:none');
+        checkboxLabel.setAttribute('style', 'color: red');
     }
     else{
+        checkboxLabel.setAttribute('style', 'color: #006494');
+        msgErrorCampo.setAttribute('style', 'display:none');
+        msgErrorCheck.setAttribute('style', 'display:none');
         cadastrar();
         limpar();
     }
@@ -162,8 +214,8 @@ function cadastrar(){
         method: "POST",
         body: JSON.stringify({
             nome: inputNome.value,
-            dataNasci: inputDataNasci.value,
-            CPF: inputCPF.value,
+            dataNasci: inputDataNacimento.value,
+            CPF: inputCpf.value,
             celular: inputCelular.value,
             email: inputEmail.value,
             senha: inputSenha.value

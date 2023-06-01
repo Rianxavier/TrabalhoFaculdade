@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/css/cadastroStyle.css">
-    <title>Cadastro XXXX </title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div class="container">
@@ -16,15 +16,21 @@
         <img src="./Assets/img/undraw_forms_re_pkrt.svg" alt="">
      </div>
      <div class = "form">
-        <form action = "###" class="formulario">
-            <div class="logoCaixa">
-                <a href="./home.html">
-                    <img class="logo" src="./Assets/img/banco_logo.png" alt="">
-                </a>
-            </div>
-            
-            <h2>Cadastre-se</h2>
+        <div class="logoCaixa">
+            <a href="./home.html">
+                <img class="logo" src="./Assets/img/banco_logo.png" alt="">
+            </a>    
+        </div>
+        
+        <h2>Cadastre-se</h2>
 
+        <p class="errorCampos">Por Favor, preencha os campos corretamente!</p>
+
+        <p class="errorPrivacidade">Está de acordo com os termos de privacidade?</p>
+        <form action = "###" class="formulario">
+            
+            
+           
             <div class ="input-group">
                 <div class = "input-box">
                     
@@ -41,12 +47,12 @@
                 <div class="grid">
                     <div class = "input-box">
                         <label for="cpf">CPF:</label>
-                        <input id = "cpf" type="text" name="cpf" placeholder="CPF:" required>    
+                        <input id = "cpf" type="text" name="cpf" minlength="14" maxlength="14" placeholder="CPF:" required>    
                     </div>
     
                     <div class = "input-box">
                         <label for="number">Celular:</label>
-                        <input id="number" type="tel" name="number"   placeholder="Celular:"required>    
+                        <input id="number" type="tel" name="number" maxlength="15"  placeholder="Celular:"required>    
                     </div>
                 </div>
                 
@@ -70,7 +76,7 @@
                 </div>
                  <div class="accept">
                     <input type="checkbox" id="accept" name="accept">
-                    <label for = "accept"> Aceito os termos de Privacidade para uso do libertyBank </label> 
+                    <label id="checkboxLabel" for = "accept"> Aceito os termos de Privacidade para uso do libertyBank </label> 
                 </div> 
                 
                  <br>
