@@ -27,9 +27,6 @@ public class Usuario {
     @Column(name = "senha", length = 50, nullable = true)
     private String senha;
 
-    /*@Column(name = "confirmarSenha", length = 50, nullable = true)
-    private String confirmarSenha;*/
-
     @Column(name = "numero", length = 15, nullable = true)
     private String numero;
 

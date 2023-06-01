@@ -196,8 +196,18 @@ formulario.addEventListener('submit', function(event) {
         checkboxLabel.setAttribute('style', 'color: #006494');
         msgErrorCampo.setAttribute('style', 'display:none');
         msgErrorCheck.setAttribute('style', 'display:none');
-        cadastrar();
+        //cadastrar();
+        const informacoes =            
+        {nome: inputNome.value,
+        email: inputEmail.value,
+        senha: inputSenha.value,
+        numero: inputCelular.value,
+        cpf: inputCpf.value,
+        nascimento: inputDataNacimento.value
+        }
         limpar();
+        console.log(informacoes);
+
     }
     
 
@@ -205,7 +215,7 @@ formulario.addEventListener('submit', function(event) {
 });
 
 function cadastrar(){
-    fetch("http://localhost:8080/cadastrar",
+    fetch("http://localhost:8080/usuarios",
     {
         hearders: {
             'Accept': 'application/json',
@@ -214,11 +224,11 @@ function cadastrar(){
         method: "POST",
         body: JSON.stringify({
             nome: inputNome.value,
-            dataNasci: inputDataNacimento.value,
-            CPF: inputCpf.value,
-            celular: inputCelular.value,
             email: inputEmail.value,
-            senha: inputSenha.value
+            senha: inputSenha.value,
+            numero: inputCelular.value,
+            cpf: inputCpf.value,
+            nascimento: inputDataNacimento.value
         })
     })
     .then(function (res) { console.log(res)})
