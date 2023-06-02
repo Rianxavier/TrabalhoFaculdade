@@ -196,6 +196,7 @@ formulario.addEventListener('submit', function(event) {
         checkboxLabel.setAttribute('style', 'color: #006494');
         msgErrorCampo.setAttribute('style', 'display:none');
         msgErrorCheck.setAttribute('style', 'display:none');
+        cadastrar();
         limpar();
     }
     
