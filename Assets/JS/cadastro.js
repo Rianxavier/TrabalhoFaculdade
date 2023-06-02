@@ -226,6 +226,7 @@ function cadastrar() {
     .catch(function(error) {
         console.log(error);
     });
+    window.location.href = "./index.html";
 };
 
 
