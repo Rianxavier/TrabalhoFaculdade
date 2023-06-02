@@ -6,7 +6,7 @@ let btnVerConfSenha = document.querySelector('#verConfSenha');
 const formulario = document.querySelector('.formulario');
 
 let inputNome = document.querySelector('#nome');
-let inputDataNascimento = document.querySelector('#nasc');
+let inputDataNacimento = document.querySelector('#nasc');
 let inputCpf = document.querySelector('#cpf');
 let inputCelular = document.querySelector('#number');
 let inputEmail = document.querySelector('#email');
@@ -178,38 +178,12 @@ inputConfirmarSenha.addEventListener('keyup', () => {
     }
 })
 
-function cadastrar() {
-    fetch("http://localhost:8080/usuarios", {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({
-            nome: inputNome.value,
-            email: inputEmail.value,
-            senha: inputSenha.value,
-            numero: inputCelular.value,
-            cpf: inputCpf.value,
-            nascimento: inputDataNascimento.value
-        })
-    })
-    .then(function(res) {
-        console.log(res);
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
-};
-
-
-
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
 
     
-    if (!senhaVerifica || !cpfVerifica || inputNome.length === 0 || inputDataNascimento.length === 0 || inputEmail.length === 0 || inputSenha.length === 0 || inputCelular.length === 0) {
+    if (!senhaVerifica || !cpfVerifica || inputNome.length === 0 || inputDataNacimento.length === 0 || inputEmail.length === 0 || inputSenha.length === 0 || inputCelular.length === 0) {
         msgErrorCampo.setAttribute('style', 'display:block');
         msgErrorCheck.setAttribute('style', 'display:none');
     }
@@ -222,14 +196,48 @@ formulario.addEventListener('submit', function(event) {
         checkboxLabel.setAttribute('style', 'color: #006494');
         msgErrorCampo.setAttribute('style', 'display:none');
         msgErrorCheck.setAttribute('style', 'display:none');
-        cadastrar();
+        //cadastrar();
+        const informacoes =            
+        {nome: inputNome.value,
+        email: inputEmail.value,
+        senha: inputSenha.value,
+        numero: inputCelular.value,
+        cpf: inputCpf.value,
+        nascimento: inputDataNacimento.value
+        }
         limpar();
+        console.log(informacoes);
+
     }
+    
+
+    
 });
+
+function cadastrar(){
+    fetch("http://localhost:8080/usuarios",
+    {
+        hearders: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+            nome: inputNome.value,
+            email: inputEmail.value,
+            senha: inputSenha.value,
+            numero: inputCelular.value,
+            cpf: inputCpf.value,
+            nascimento: inputDataNacimento.value
+        })
+    })
+    .then(function (res) { console.log(res)})
+    .catch(function (res) { console.log(res)})
+};
 
 function limpar(){
     inputNome.value = "";
-    inputDataNascimento.value = "";
+    inputDataNacimento.value = "";
     inputCpf.value = "";
     inputCelular.value = "";
     inputEmail.value = "";
