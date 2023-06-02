@@ -1,6 +1,6 @@
 let inputNome = document.querySelector('#nome');
-// let inputDataNascimento = document.querySelector('#nasc');
-// let inputCpf = document.querySelector('#cpf');
+let inputDataNascimento = document.querySelector('#nasc');
+let inputCpf = document.querySelector('#cpf');
 let inputCelular = document.querySelector('#number');
 let inputEmail = document.querySelector('#email');
 let inputSenha = document.querySelector('#senha');
@@ -15,10 +15,13 @@ function editar() {
         },
         method: "PUT",
         body: JSON.stringify({
+            id: 3,
             nome: inputNome.value,
             email: inputEmail.value,
             senha: inputSenha.value,
-            numero: inputCelular.value
+            numero: inputCelular.value,
+            cpf: inputCpf.value,
+            nascimento: inputDataNascimento.value
         })
     })
     .then(function(res) {
