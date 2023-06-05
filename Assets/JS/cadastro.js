@@ -204,9 +204,10 @@ formulario.addEventListener('submit', function(event) {
     
 });
 
-function cadastrar() {
-    fetch("http://localhost:8080/usuarios", {
-        headers: {
+function cadastrar(){
+    fetch("http://localhost:8080/usuarios",
+    {
+        hearders: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
@@ -220,14 +221,9 @@ function cadastrar() {
             nascimento: inputDataNascimento.value
         })
     })
-    .then(function(res) {
-        console.log(res);
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
+    .then(function (res) { console.log(res)})
+    .catch(function (error) { console.log(error)})
 };
-
 
 function limpar(){
     inputNome.value = "";
