@@ -140,7 +140,11 @@ function limpar(){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 btnEditar.addEventListener('click', function (event) {
+=======
+formulario.addEventListener('submit', function(event) {
+>>>>>>> parent of aabe473 (aqui tudo funciona)
 =======
 formulario.addEventListener('submit', function(event) {
 >>>>>>> parent of aabe473 (aqui tudo funciona)
@@ -153,6 +157,7 @@ formulario.addEventListener('submit', function(event) {
     }
     
 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -180,5 +185,7 @@ apagar.addEventListener('click', function (event) {
     event.preventDefault();
     apagarConta();
 })
+=======
+>>>>>>> parent of aabe473 (aqui tudo funciona)
 =======
 >>>>>>> parent of aabe473 (aqui tudo funciona)
