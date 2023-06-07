@@ -111,7 +111,7 @@ function editar() {
         },
         method: "PUT",
         body: JSON.stringify({
-            id: 2,
+            id: 3,
             nome: inputNome.value,
             email: inputEmail.value,
             senha: inputSenha.value,
@@ -120,16 +120,16 @@ function editar() {
             nascimento: inputDataNascimento.value
         })
     })
-        .then(function (res) {
-            console.log(res);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    .then(function(res) {
+        console.log(res);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
 };
 
 
-function limpar() {
+function limpar(){
     inputNome.value = "";
     inputDataNascimento.value = "";
     inputCpf.value = "";
@@ -139,7 +139,11 @@ function limpar() {
     inputConfirmarSenha.value = "";
 }
 
+<<<<<<< HEAD
 btnEditar.addEventListener('click', function (event) {
+=======
+formulario.addEventListener('submit', function(event) {
+>>>>>>> parent of aabe473 (aqui tudo funciona)
     event.preventDefault();
     if (!senhaVerifica || inputCelular.length === 0) {
         msgErrorCampo.setAttribute('style', 'display:block');
@@ -149,6 +153,7 @@ btnEditar.addEventListener('click', function (event) {
     }
     
 });
+<<<<<<< HEAD
 
 
 
@@ -175,3 +180,5 @@ apagar.addEventListener('click', function (event) {
     event.preventDefault();
     apagarConta();
 })
+=======
+>>>>>>> parent of aabe473 (aqui tudo funciona)
