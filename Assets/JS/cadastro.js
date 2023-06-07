@@ -198,10 +198,8 @@ formulario.addEventListener('submit', function(event) {
         msgErrorCheck.setAttribute('style', 'display:none');
         cadastrar();
         limpar();
+        window.location.href = "../html/conta.html";
     }
-    
-
-    
 });
 
 function cadastrar() {
@@ -226,7 +224,8 @@ function cadastrar() {
     .catch(function(error) {
         console.log(error);
     });
-    window.location.href = "./index.html";
+    
+
 };
 
 

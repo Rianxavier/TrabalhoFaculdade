@@ -14,6 +14,7 @@ let msgErrorCampo = document.querySelector('.errorCampos');
 
 let apagar = document.querySelector('#apagar');
 let id = document.querySelector('#id');
+let idEditar = document.querySelector('#idEditar');
 
 let btnEditar = document.querySelector('.btn-editar');
 
@@ -111,7 +112,7 @@ function editar() {
         },
         method: "PUT",
         body: JSON.stringify({
-            id: 3,
+            id: idEditar.value,
             nome: inputNome.value,
             email: inputEmail.value,
             senha: inputSenha.value,
@@ -120,16 +121,18 @@ function editar() {
             nascimento: inputDataNascimento.value
         })
     })
-    .then(function(res) {
-        console.log(res);
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
+        .then(function (res) {
+            console.log(res);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 };
 
 
-function limpar(){
+function limpar() {
+    id.value = "";
+    idEditar.value = "";
     inputNome.value = "";
     inputDataNascimento.value = "";
     inputCpf.value = "";
@@ -139,15 +142,7 @@ function limpar(){
     inputConfirmarSenha.value = "";
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 btnEditar.addEventListener('click', function (event) {
-=======
-formulario.addEventListener('submit', function(event) {
->>>>>>> parent of aabe473 (aqui tudo funciona)
-=======
-formulario.addEventListener('submit', function(event) {
->>>>>>> parent of aabe473 (aqui tudo funciona)
     event.preventDefault();
     if (!senhaVerifica || inputCelular.length === 0) {
         msgErrorCampo.setAttribute('style', 'display:block');
@@ -157,8 +152,6 @@ formulario.addEventListener('submit', function(event) {
     }
     
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 
@@ -184,8 +177,6 @@ function apagarConta() {
 apagar.addEventListener('click', function (event) {
     event.preventDefault();
     apagarConta();
+    limpar();
+    window.location.href= "../../home.html";
 })
-=======
->>>>>>> parent of aabe473 (aqui tudo funciona)
-=======
->>>>>>> parent of aabe473 (aqui tudo funciona)
