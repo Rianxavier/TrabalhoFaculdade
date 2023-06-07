@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Wix+Madefor+Text:wght@500&display=swap');
+
+  *{
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Wix Madefor Text', sans-serif;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #e4d7f0d7;
+  }
+
+  main{
+    margin-left: 250px;
+    padding-right: 10px;
+  }
+  
+  .sidebar{
+    /* background-color: #006494; */
+    position: fixed;
+    top: o;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    height: 100%;
+    padding: 40px 10px 30px 10px;
+    border-right: 2px solid #006494;
+    transition: all 0.3s;
+  }
+
+  .sidebar-header{
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .usu-img{
+    width: 80px;
+    min-height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.7s;
+  }
+  .usu-img:hover{
+    transform: scale(1.2);
+  }
+
+  .sidebar button{
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    color: black;
+    cursor: pointer;
+    text-align: left;
+    padding: 10px 85px 10px 20px;
+    margin-bottom: 10px;
+    line-height: 1px;
+   
+    border-radius: 8px;
+  }
+  .sidebar button > span{
+    font-size: 15px;
+    
+  }
+  .sidebar button:hover{
+    background: rgb(207, 193, 245);
+    
+  }
+  .sidebar button i {
+  position: relative;
+  font-size: 15px;
+  transition: 0.2s;
+  }
+
+  .sidebar button span{
+    font-size: 15px;
+  }
+
+  .inline{
+    display: inline;
+  }
+
+
+  h1{
+    color: #006494;
+  }
+
+  #saldo p{
+    padding-left: 25px;
+  }
+
+  #cartao p{
+    margin-right: 90px;
+    padding-left: 25px;
+  }
+
+  #olho{
+    margin-left: 40px;
+    border-radius: 10px;
+    color: #006494;
+    border: none;
+  }
+
+  .tranferencia-form input{
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+    width: 270px;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #006494;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .box{
+    padding: 20px ;
+  }
+
+  .tranferencia-form button{
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 7px;
+    color: white;
+    background-color: rgb(89, 89, 173);
+    font-size: 14px;
+    letter-spacing: .6px;
+    margin-left: 20px;
+}
+
+  @media (width < 920px){
+   
+
+    .sidebar{
+        width: 100px;
+
+    }
+    .sidebar :button > span{
+        width: 50px;
+    }
+    .sidebar button > span > span{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+  }

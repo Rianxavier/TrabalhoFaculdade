@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap');
+
 *{
     padding:0;
     margin: 0;
@@ -15,26 +16,24 @@ body{
     background-color: #006494;
 }
 
-.container {
+.container-todo{
+    display: flex;
     position: relative;
     width: 80%;
-    height: 85%;
-    display: flex;
+    height: 80vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     border-radius: 20px;
+    border-radius:30px;
 }
-
-.form-image {
+.container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: #a174c5d7;
-    padding: 1rem;
-    border-radius: 30px 0 0 30px;
-}
-.form-image img{
-    width: 30rem;
+    padding: 3rem;
+    border-radius: 0 30px 30px 0;
 }
 
 
@@ -46,7 +45,7 @@ body{
     flex-direction: column;
     background-color: rgb(200, 200, 243);
     padding: 3rem;
-    border-radius: 0 30px 30px 0;
+    border-radius: 30px 0px 0px 30px;
 }
 
 .logoCaixa{
@@ -61,7 +60,7 @@ body{
     cursor: pointer;
 }
 
-.form h2 {
+h2 {
     margin-bottom: 5px;
     text-align: center;
     letter-spacing: 2px;
@@ -97,6 +96,38 @@ body{
     color: #efeef5;
 }
 
+.voltar-button button {
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(89, 89, 173) ;
+    font-size: 14px;
+    letter-spacing: .6px;
+    transition: .1s;
+}
+
+.voltar-button button:hover {
+    transform: scale(0.95,0.95);
+    background-color: #191970 ;
+}
+
+.voltar-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #efeef5;
+}
+
+.btn-apagar{
+    margin-bottom: 20px;
+}
+
+.btn-voltar{
+    float: right;
+    margin-top: 20px;
+}
+
 .input-box{
     position: relative;
     display: flex;
@@ -120,6 +151,29 @@ body{
     margin-bottom: 7px;
     font-size: 16px;
     
+}
+
+.id::placeholder {
+    color: black;
+}
+.inputbox-id{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.id{
+    padding: 10px 0;
+    position:relative;
+    width: 40%;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #006494;
+    margin-bottom: 7px;
+    font-size: 16px;
 }
 
 .input-box label{
@@ -155,7 +209,7 @@ body{
     margin-bottom: -10px;
 }
 
-form p{
+.form p{
     color: grey;
     font-weight: 300;
     margin-top: 0.5em;
@@ -163,6 +217,9 @@ form p{
     
 }
 
+.container p{
+    margin-bottom: 10px;
+}
 form .link-login{
     text-decoration: none;
     font-weight: 500;
@@ -176,6 +233,9 @@ form .link-login{
 .caixaLogin{
     text-align: center;
 }
+
+
+/* Responsividade */
 
 @media (max-width:1090px){
     .form-image {
@@ -230,18 +290,10 @@ form .link-login{
 
 }
 
+/* msg erro da senha */
+
 .errorCampos{
     position: relative;
-    color: red;
-    text-align: center;
-    margin-bottom: 2px;
-    border: 1px solid red;
-    padding: 10px;
-    letter-spacing: 1.0px;
-    border-radius: 5px;
-    display: none;
-}
-.errorPrivacidade{
     color: red;
     text-align: center;
     margin-bottom: 2px;

@@ -4,9 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../css/conta.css"/>
+
+
+    <title>Sua Conta Liberty!</title>
 </head>
+
 <body>
-    <h1>Conta</h1>
+    <aside class="sidebar">
+       <header class="sidebar-header">
+        <img class="usu-img" src="../img/usuarioimagem.JPG">
+        <p>Bem vindo<span id="nome"></span>!!</p> 
+        
+       </header> 
+
+       <nav>
+        <button>
+            <span>
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <span>Gerenciar</span>
+                
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Liberty Card </span>
+            </span>
+        </button>
+
+        <button>
+         <span>
+            <i class="fa-solid fa-list"></i>
+            <span>Sua Fatura</span>
+         </span>
+        </button>
+
+        <button>
+            <a href="../html/editar.html">
+               <span>
+                <i class="fa-solid fa-user-pen"></i>
+            <span>Editar conta</span> 
+            </a>
+            
+        </button>
+        
+        <button>
+            <a href="./home.html">
+              <span>
+                <i class="fa-solid fa-door-open"></i>
+            <span>Sair</span>  
+            </a>
+            
+        </button>
+        
+       </nav>
+    </aside>
+
+    <main>
+        <div id="saldo" class="box">
+            <h1>Saldo da conta:</h1>
+            <p class="inline">R$ <span id="valor">535.31</span></p>
+            <i id="olho" class="fa-solid fa-eye"></i>
+        </div>
+
+        <hr>
+
+        <div id="cartao" class="box">
+            <h1>Liberty Card</h1>
+            <p class="inline">Valor Fatura R$<span id="fatura">1.300,00</span></p>
+            <p class="inline">Limite disponivel R$<span id="fatura">3.050,00</span></p>
+        </div>
+
+        <hr>
+
+        <div id="tranferencia" class="box">
+            <h1>Tranferência</h1>
+            <form class="tranferencia-form">
+                <input type="number" placeholder="conta destido"></input>
+                <input type="number"placeholder="valor"></input>
+
+                <button>Enviar <i class="fa-solid fa-arrow-right-arrow-left"></i> </button>
+            </form>
+        </div>
+        
+    </main>
 </body>
 </html>
