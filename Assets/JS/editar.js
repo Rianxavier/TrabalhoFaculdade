@@ -11,12 +11,14 @@ let inputConfirmarSenha = document.querySelector('#confirmarsenha');
 
 const formulario = document.querySelector('.formulario');
 let msgErrorCampo = document.querySelector('.errorCampos');
+let idvazio = document.querySelector('.idvazio');
 
 let apagar = document.querySelector('#apagar');
 let id = document.querySelector('#id');
 let idEditar = document.querySelector('#idEditar');
 
 let btnEditar = document.querySelector('.btn-editar');
+let senhaVerifica = false;
 
 btnVerSenha.addEventListener("click", verSenha);
 btnVerConfSenha.addEventListener("click", verConfirmarSenha);
@@ -144,8 +146,9 @@ function limpar() {
 
 btnEditar.addEventListener('click', function (event) {
     event.preventDefault();
-    if (!senhaVerifica || inputCelular.length === 0) {
+    if (!senhaVerifica || inputNome.value.length === 0 || idEditar.value.length === 0 || inputEmail.value.length === 0 || inputSenha.value.length === 0 || inputCelular.value.length === 0) {
         msgErrorCampo.setAttribute('style', 'display:block');
+    
     }else{
         editar();
         limpar();
@@ -176,7 +179,14 @@ function apagarConta() {
 
 apagar.addEventListener('click', function (event) {
     event.preventDefault();
-    apagarConta();
-    limpar();
-    window.location.href= "../../home.html";
+     if(id.value.length === 0 ){
+        idvazio.setAttribute('style', 'display:block');
+     }
+    else{
+        apagarConta();
+        limpar();
+        window.location.href= "../../home.html";
+    }
+    
+   
 })

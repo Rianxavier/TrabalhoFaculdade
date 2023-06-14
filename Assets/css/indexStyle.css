@@ -102,6 +102,10 @@ body{
     font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
 .btn-entrar button{
     padding: 0.6rem 1.5rem;
     cursor: pointer;
