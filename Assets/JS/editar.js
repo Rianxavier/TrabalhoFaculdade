@@ -20,6 +20,8 @@ let idEditar = document.querySelector('#idEditar');
 let btnEditar = document.querySelector('.btn-editar');
 let senhaVerifica = false;
 
+let primeiroForm = document.querySelector('.primeiro-form'); 
+
 btnVerSenha.addEventListener("click", verSenha);
 btnVerConfSenha.addEventListener("click", verConfirmarSenha);
 
@@ -144,14 +146,15 @@ function limpar() {
     inputConfirmarSenha.value = "";
 }
 
-btnEditar.addEventListener('click', function (event) {
+primeiroForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (!senhaVerifica || inputNome.value.length === 0 || idEditar.value.length === 0 || inputEmail.value.length === 0 || inputSenha.value.length === 0 || inputCelular.value.length === 0) {
+    if (!senhaVerifica ) {
         msgErrorCampo.setAttribute('style', 'display:block');
-    
+        msgErrorCampo.innerHTML = 'As senhas não coincidem.';
     }else{
         editar();
         limpar();
+        msgErrorCampo.setAttribute('style', 'display:none');
     }
     
 });
