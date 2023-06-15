@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Wix Madefor Text', 'Sans-serif';
+}
+
+body {
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    
+  }
+  
+
+
+  header{
+    background-color: #006494;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    align-items: center;
+}
+
+#header-logo{
+    padding: 5px 10px;
+    width: 90px;
+}
+
+nav{
+    display: inline;
+}
+
+#topo div div{
+    display: inline;
+}
+
+.Menu-links{
+    width: 30%;
+}
+
+.Menu-links ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.Menu-links ul li{
+    display: inline;
+    font-size: 1em;
+}
+
+.Menu-links .link{
+    position: relative;
+    right: 30px;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.Menu-links .link:hover{
+    color: #006494;
+    background-color: white;
+}
+
+main{
+    position: relative;
+    top:100px;
+    
+}
+
+h1, img {
+    margin: 0 auto;
+  }
+
+.qrcode{
+    width: 270px;
+    position: relative;
+    top: 20px;
+  }
+
+  h1{
+    position: relative;
+    margin: 20px;
+  }
+  p{
+    position: relative;
+    margin: auto;
+    width: 700px;
+    
+  }
+  div{
+    text-align: center;
+  }
