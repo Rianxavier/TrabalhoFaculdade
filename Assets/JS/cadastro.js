@@ -1,5 +1,5 @@
 // import {ValidaCPF} from './classValidaCPF';
-
+//Variaveis 
 let btnVerSenha = document.querySelector('#verSenha');
 let btnVerConfSenha = document.querySelector('#verConfSenha');
 
